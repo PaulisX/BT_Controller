@@ -22,9 +22,14 @@ async function connectToBluetoothDevice() {
       console.log('Battery service accessed.');
 
       const characteristic = await service.getCharacteristic('0000ffe1-0000-1000-8000-00805f9b34fb');
-      
-      const resetEnergyExpended = Int8Array.of(11,-5);
-      characteristic.writeValue(resetEnergyExpended);
+      let sliderA = document.getElementById('motA');
+      let sliderB = document.getElementById('motB');
+      while(true){
+         let motA = sliderA.value;
+         let motB = sliderB.value;
+         const resetEnergyExpended = Int8Array.of(motA,motB);
+         await characteristic.writeValue(resetEnergyExpended);
+      }      
       
 
       // // Access a characteristic (e.g., Battery Level)
