@@ -1,2 +1,33 @@
 <script src="index.js"></script>
+<style>
+	input[type="range"] {
+		writing-mode: vertical-lr;
+		direction: rtl;
+		vertical-align: middle;
+		height: 100%;
+	}
+</style>
 <button type="button" onclick="connectToBluetoothDevice()">CONN</button>
+<div
+	class="slidecontainer"
+	style="display: flex; justify-content: space-between; margin: 10em"
+>
+	<input
+		type="range"
+		min="-127"
+		max="127"
+		step="1"
+		value="0"
+		class="slider"
+		id="motA"
+	/>
+	<input
+		type="range"
+		min="-127"
+		max="127"
+		step="1"
+		value="0"
+		class="slider"
+		id="motB"
+	/>
+</div>
