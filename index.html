@@ -4,13 +4,22 @@
 		writing-mode: vertical-lr;
 		direction: rtl;
 		vertical-align: middle;
-		height: 100%;
+		height: auto;
+		margin: 10em;
 	}
 </style>
 <button type="button" onclick="connectToBluetoothDevice()">CONN</button>
 <div
 	class="slidecontainer"
-	style="display: flex; justify-content: space-between; margin: 10em"
+	style="
+		display: flex;
+		justify-content: space-between;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	"
 >
 	<input
 		type="range"
