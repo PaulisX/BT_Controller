@@ -40,6 +40,7 @@ async function connectToBluetoothDevice() {
          console.log(motA.toString(2), " ; ", motB.toString(2));
          const resetEnergyExpended = Int8Array.of(motA,motB);
          await characteristic.writeValue(resetEnergyExpended); 
+         await sleep(50);
       }      
    } catch (error) {
       console.error('Error:', error);
