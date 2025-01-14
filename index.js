@@ -32,8 +32,12 @@ async function connectToBluetoothDevice() {
       await characteristic.writeValue(resetEnergyExpended);
       await characteristic.writeValue(resetEnergyExpended);
       while(true){
-         let motA = sliderA.value;
-         let motB = sliderB.value;
+         let motA = parseInt(sliderA.value);
+         let motB = parseInt(sliderB.value);
+
+         motA =  Math.abs(motA) << 2 | (motA<0)<<1 | 0;
+         motB =  Math.abs(motB) << 2 | (motB<0)<<1 | 1;
+         console.log(motA.toString(2), " ; ", motB.toString(2));
          const resetEnergyExpended = Int8Array.of(motA,motB);
          await characteristic.writeValue(resetEnergyExpended); 
       }      
