@@ -10,7 +10,7 @@ async function connectToBluetoothDevice() {
       const device = await navigator.bluetooth.requestDevice({
          acceptAllDevices: false, // Only allow specific devices
          filters: [
-            {  name: 'Tomato_BT',
+            {
                services: ["0000ffe0-0000-1000-8000-00805f9b34fb"]
             }
          ]
