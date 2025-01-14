@@ -46,3 +46,7 @@ async function connectToBluetoothDevice() {
       console.error('Error:', error);
    }
 }
+
+function sleep(ms) {
+   return new Promise(resolve => setTimeout(resolve, ms));
+}
